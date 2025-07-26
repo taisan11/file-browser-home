@@ -137,21 +137,15 @@ function displayHistory(): void {
 
 // 履歴アイテムを削除
 function deleteHistoryItemHTML(id: string): void {
-    if (confirm('この履歴を削除しますか？')) {
-        if (deleteHistoryItem(id)) {
-            displayHistory();
-        } else {
-            alert('削除に失敗しました');
-        }
+    if (deleteHistoryItem(id)) {
+        displayHistory();
     }
 }
 
 // 全履歴を削除
 function clearAllHistoryHTML(): void {
-    if (confirm('全ての履歴を削除しますか？この操作は取り消せません。')) {
-        clearAllHistory();
-        displayHistory();
-    }
+    clearAllHistory();
+    displayHistory();
 }
 
 // グローバル関数として定義（HTMLから呼び出し用）
