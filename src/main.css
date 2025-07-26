@@ -105,6 +105,7 @@ a:hover {
 .action-cell {
     width: 100px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .delete-btn {
@@ -119,6 +120,48 @@ a:hover {
 
 .delete-btn:hover {
     background-color: #c82333;
+}
+
+/* Star button styles */
+.star-btn {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.star-btn:hover {
+    background-color: #e9ecef;
+}
+
+.star-btn.starred {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
+
+.star-btn.starred:hover {
+    background-color: #ffcd39;
+}
+
+/* Starred section styles */
+.starred-section {
+    margin: 20px 0;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.starred-section h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #495057;
+    font-size: 18px;
 }
 
 .empty-message {

@@ -1,3 +1,5 @@
+import { addStarredItem } from './star';
+
 interface HistoryItem {
     url: string;
     query?: string;
@@ -116,6 +118,15 @@ function displayHistory(): void {
         // 操作列
         const actionCell = row.insertCell();
         actionCell.className = 'action-cell';
+        
+        // スターボタン
+        const starBtn = document.createElement('button');
+        starBtn.className = 'star-btn';
+        starBtn.textContent = '★'
+        starBtn.onclick = () => addStarredItem({ url: item.url, name: item.query || '', id: item.id });
+        actionCell.appendChild(starBtn);
+        
+        // 削除ボタン
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.textContent = '削除';
@@ -142,6 +153,9 @@ function clearAllHistoryHTML(): void {
         displayHistory();
     }
 }
+
+// グローバル関数として定義（HTMLから呼び出し用）
+(window as any).clearAllHistoryHTML = clearAllHistoryHTML;
 
 // ページ読み込み時に履歴を表示
 window.addEventListener('load', () => {
