@@ -3,5 +3,12 @@
     "compatibility_date": "2025-07-26",
     "assets": {
         "directory": "./dist"
-    }
+    },
+    "workers_dev":false,
+    "routes": [
+        {
+            "pattern": "file-browser-home.taisan11.f5.si",
+            "custom_domain": true
+        }
+    ]
 }
